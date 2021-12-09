@@ -75,7 +75,7 @@ int getImageIndex(string imageName){
     string number = "";
 
     for(int i = 0; i < imageName.size(); i++){
-        if(isnumber(imageName[i]))
+        if(imageName[i] >= '0' && imageName[i] <= '9' )
             number.push_back(imageName[i]);
     }
 
@@ -112,7 +112,7 @@ vector<Rect> getGroundTruthFaces(int imageIndex){
     vector<Rect> groundTruthRects;
 
     while(getline (readFromFile, read)){
-        if( isnumber(read[0]) && atoi(read.c_str()) == imageIndex ) {
+        if( read[0] >= '0' && read[0] <= '9' && atoi(read.c_str()) == imageIndex ) {
             groundTruthRects = getRectangleFaces(readFromFile);
             break;
         }

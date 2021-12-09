@@ -1,10 +1,3 @@
-/////////////////////////////////////////////////////////////////////////////
-//
-// COMS30121 - face.cpp
-//
-/////////////////////////////////////////////////////////////////////////////
-
-// header inclusion
 #include <stdio.h>
 #include "opencv2/objdetect/objdetect.hpp"
 #include "opencv2/opencv.hpp"
@@ -26,12 +19,22 @@ void showRectangles(vector<Rect> rectangles, Mat frame, Scalar color);
 
 int getImageIndex(string imageName);
 
-vector<Rect> getViolaFaces(Mat frame);
+vector<Rect> detectSigns(Mat frame);
 
 double getF1Score(vector<Rect> truth, vector<Rect> detected);
 
+void calculateSobel(Mat grayImage, Mat &sobelX, Mat &sobelY, Mat &magnitudeImage, Mat &directionImage);
+
+void threshold(Mat &grayImage, double thershold, double maxValue);
+
+vector<Vec3f> getHoughCircles(Mat magnitudeImage, Mat directionImage, Mat image);
+
+void filterNoEntrySigns(vector<Rect> &noEntrySigns, vector<Vec3f> houghCircles);
+
+
+
 /** Global variables */
-String cascade_name = "frontalface.xml";
+String cascade_name = "NoEntrycascade/cascade.xml";
 CascadeClassifier cascade;
 
 
@@ -39,8 +42,16 @@ CascadeClassifier cascade;
 int main( int argc, const char** argv ){
     // 1. Read Input Image
 
-    Mat frame = imread(argv[1], CV_LOAD_IMAGE_COLOR);
-    int imageIndex = getImageIndex(argv[1]);
+    for(int j = 0; j <= 15; j++){
+        char* fileToInput = new char[100];
+
+    sprintf(fileToInput, "No_entry/NoEntry%d.bmp", j);
+
+
+    //Mat frame = imread(argv[1], CV_LOAD_IMAGE_COLOR);
+    Mat frame = imread(fileToInput, CV_LOAD_IMAGE_COLOR);
+    int imageIndex = j;
+    //int imageIndex = getImageIndex(argv[1]);
 
     // 2. Load the Strong Classifier in a structure called `Cascade'
     if (!cascade.load(cascade_name)) {
@@ -49,24 +60,30 @@ int main( int argc, const char** argv ){
     }
 
     // 3. Detect Faces and Display Result
-    vector<Rect> violaFaces = getViolaFaces(frame);
-    showRectangles(violaFaces, frame, Scalar(0, 255, 0));
-    std::cout << "Number of Viola faces: " << violaFaces.size() << '\n';
-    for(int i = 0; i < violaFaces.size(); i++) std::cout << violaFaces[i] << ' ';
+    vector<Rect> signs = detectSigns(frame);
+    showRectangles(signs, frame, Scalar(0, 255, 0));
+    std::cout << "Number of Viola NoEntry signs: " << signs.size() << '\n';
+    for(int i = 0; i < signs.size(); i++) std::cout << signs[i] << ' ';
     std::cout << '\n';
 
     vector<Rect> groundTruthFaces = getGroundTruthFaces(imageIndex);
-    std::cout << "Number of Truth faces: " << groundTruthFaces.size() << '\n';
+    std::cout << "Number of Truth NoEntry signs: " << groundTruthFaces.size() << '\n';
     for(int i = 0; i < groundTruthFaces.size(); i++) std::cout << groundTruthFaces[i] << ' ';
     std::cout << '\n';
     showRectangles(groundTruthFaces, frame, Scalar(0,0,255));
 
-    std::cout << "\nF1 score: " << getF1Score(groundTruthFaces, violaFaces) << '\n';
+    std::cout << "\nF1 score: " << getF1Score(groundTruthFaces, signs) << '\n';
 
     // 4. Save Result Image
-    char *fileToOutput;
+    char* fileToOutput = new char[100];
+
     sprintf(fileToOutput, "allDetected/detected%d.jpg", imageIndex);
     imwrite(fileToOutput, frame);
+
+    delete(fileToInput);
+    delete(fileToOutput);
+    }
+
 
 	return 0;
 }
@@ -75,7 +92,7 @@ int getImageIndex(string imageName){
     string number = "";
 
     for(int i = 0; i < imageName.size(); i++){
-        if(isnumber(imageName[i]))
+        if(isdigit(imageName[i]))
             number.push_back(imageName[i]);
     }
 
@@ -105,40 +122,56 @@ vector<Rect> getRectangleFaces(std::istream& is){
 
 vector<Rect> getGroundTruthFaces(int imageIndex){
 
-    ifstream readFromFile("GroundTruth.csv");
+    ifstream readFromFile("GroundTruthNoEntry.csv");
 
     string read;
 
     vector<Rect> groundTruthRects;
 
     while(getline (readFromFile, read)){
-        if( isnumber(read[0]) && atoi(read.c_str()) == imageIndex ) {
+        if( isdigit(read[0]) && atoi(read.c_str()) == imageIndex ) {
             groundTruthRects = getRectangleFaces(readFromFile);
             break;
         }
     }
+
 
     return groundTruthRects;
 
 }
 
 /** @function detectAndDisplay */
-vector<Rect> getViolaFaces( Mat frame )
+vector<Rect> detectSigns( Mat image )
 {
-	std::vector<Rect> faces;
-	Mat frame_gray;
+	std::vector<Rect> noEntrySigns;
+	Mat grayImage;
 
 	// 1. Prepare Image by turning it into Grayscale and normalising lighting
-	cvtColor( frame, frame_gray, CV_BGR2GRAY );
-	equalizeHist( frame_gray, frame_gray );
+	cvtColor( image, grayImage, CV_BGR2GRAY );
+	equalizeHist( grayImage, grayImage );
 
 	// 2. Perform Viola-Jones Object Detection
-	cascade.detectMultiScale( frame_gray, faces, 1.1, 1, 0|CV_HAAR_SCALE_IMAGE, Size(10, 10), Size(300,300) );
+	cascade.detectMultiScale( grayImage, noEntrySigns, 1.03, 1, 0|CV_HAAR_SCALE_IMAGE, Size(10, 10), Size(300,300) );
+
+    GaussianBlur(grayImage, noEntrySigns, Size(3,3), 0, 0, BORDER_DEFAULT);
+
+    Mat sobelX, sobelY, magnitudeImage, directionImage;
+
+    calculateSobel(grayImage, sobelX, sobelY, magnitudeImage, directionImage);
+
+    threshold(grayImage, 120, 255);
+
+    vector<Vec3f> houghCircles = getHoughCircles(magnitudeImage, directionImage, image);
+
+    filterNoEntrySigns(noEntrySigns, houghCircles);
+
+
+
 
        // 3. Print number of Faces found
-	std::cout << faces.size() << std::endl;
+	std::cout << noEntrySigns.size() << std::endl;
 
-    return faces;
+    return noEntrySigns;
 
 }
 
@@ -185,4 +218,8 @@ void showRectangles(vector<Rect> rectangles, Mat frame, Scalar color){
     {
         rectangle(frame, Point(rectangles[i].x, rectangles[i].y), Point(rectangles[i].x + rectangles[i].width, rectangles[i].y + rectangles[i].height), color, 2);
     }
+}
+
+vector<Vec3f> getHoughCircles(Mat magnitudeImage, Mat directionImage, Mat image){
+    return vector<Vec3f>();
 }
