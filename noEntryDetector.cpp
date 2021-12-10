@@ -42,8 +42,6 @@ CascadeClassifier cascade;
 int main( int argc, const char** argv ){
     // 1. Read Input Image
 
-    double totalF1 = 0;
-
     //char* fileToInput = new char[100];
 
     //sprintf(fileToInput, "No_entry/NoEntry%d.bmp", j);
@@ -73,10 +71,7 @@ int main( int argc, const char** argv ){
     //std::cout << '\n';
     showRectangles(groundTruthFaces, frame, Scalar(0,0,255));
 
-    double f1 = getF1Score(groundTruthFaces, signs);
-    totalF1 += f1;
-
-    std::cout << "\nF1 score for "<< imageIndex << "is " << f1 << '\n';
+    std::cout << "\nF1 score for image "<< imageIndex << " is " << getF1Score(groundTruthFaces, signs) << '\n';
 
     // 4. Save Result Image
     char* fileToOutput = new char[100];
@@ -86,9 +81,6 @@ int main( int argc, const char** argv ){
 
     //delete[] (fileToInput);
     delete[] (fileToOutput);
-
-
-    std::cout << "Overall score: " << totalF1 / 16 << '\n';
 
 
 	return 0;
@@ -174,7 +166,7 @@ vector<Rect> detectSigns( Mat image )
 
     filterNoEntrySigns(noEntrySigns, houghCircles);
 
-	std::cout << noEntrySigns.size() << std::endl;
+	std::cout << "Number of signs found: " << noEntrySigns.size();
 
     return noEntrySigns;
 
@@ -213,7 +205,7 @@ double getF1Score(vector<Rect> truth, vector<Rect> detected){
     double falsePositive = detected.size() - truePositive;
     double falseNegative = truth.size() - truePositive;
 
-    std::cout << "True positive rate: " << truePositive/truth.size() << '\n';
+    //std::cout << "True positive rate: " << truePositive/truth.size() << '\n';
 
     return truePositive / (truePositive + (falsePositive + falseNegative)/2.0);
 }
