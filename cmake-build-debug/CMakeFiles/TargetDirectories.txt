@@ -1,4 +1,4 @@
-/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/Coursework_materials.dir
-/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/face.dir
+/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/Coursework_materials.dir
+/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/noEntryDetector.dir

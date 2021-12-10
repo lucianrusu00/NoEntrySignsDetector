@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials"
+CMAKE_SOURCE_DIR = /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,44 +130,44 @@ Coursework_materials/fast:
 .PHONY : Coursework_materials/fast
 
 #=============================================================================
-# Target rules for targets named face
+# Target rules for targets named noEntryDetector
 
 # Build rule for target.
-face: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 face
-.PHONY : face
+noEntryDetector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 noEntryDetector
+.PHONY : noEntryDetector
 
 # fast build rule for target.
-face/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face.dir/build.make CMakeFiles/face.dir/build
-.PHONY : face/fast
+noEntryDetector/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noEntryDetector.dir/build.make CMakeFiles/noEntryDetector.dir/build
+.PHONY : noEntryDetector/fast
 
-face.o: face.cpp.o
-.PHONY : face.o
+noEntryDetector.o: noEntryDetector.cpp.o
+.PHONY : noEntryDetector.o
 
 # target to build an object file
-face.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/face.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face.dir/build.make CMakeFiles/face.dir/face.cpp.o
-.PHONY : face.cpp.o
+noEntryDetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noEntryDetector.dir/build.make CMakeFiles/noEntryDetector.dir/noEntryDetector.cpp.o
+.PHONY : noEntryDetector.cpp.o
 
-face.i: face.cpp.i
-.PHONY : face.i
+noEntryDetector.i: noEntryDetector.cpp.i
+.PHONY : noEntryDetector.i
 
 # target to preprocess a source file
-face.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/face.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face.dir/build.make CMakeFiles/face.dir/face.cpp.i
-.PHONY : face.cpp.i
+noEntryDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noEntryDetector.dir/build.make CMakeFiles/noEntryDetector.dir/noEntryDetector.cpp.i
+.PHONY : noEntryDetector.cpp.i
 
-face.s: face.cpp.s
-.PHONY : face.s
+noEntryDetector.s: noEntryDetector.cpp.s
+.PHONY : noEntryDetector.s
 
 # target to generate assembly for a file
-face.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/face.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face.dir/build.make CMakeFiles/face.dir/face.cpp.s
-.PHONY : face.cpp.s
+noEntryDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Coursework_materials.dir/build.make CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/noEntryDetector.dir/build.make CMakeFiles/noEntryDetector.dir/noEntryDetector.cpp.s
+.PHONY : noEntryDetector.cpp.s
 
 # Help Target
 help:
@@ -178,10 +178,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Coursework_materials"
-	@echo "... face"
-	@echo "... face.o"
-	@echo "... face.i"
-	@echo "... face.s"
+	@echo "... noEntryDetector"
+	@echo "... noEntryDetector.o"
+	@echo "... noEntryDetector.i"
+	@echo "... noEntryDetector.s"
 .PHONY : help
 
 

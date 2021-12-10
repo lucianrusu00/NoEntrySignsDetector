@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials
+# Install script for directory: /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

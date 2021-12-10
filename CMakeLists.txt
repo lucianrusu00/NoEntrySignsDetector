@@ -9,9 +9,9 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 find_package( OpenCV REQUIRED )
 
-add_executable(face face.cpp)
+add_executable(noEntryDetector noEntryDetector.cpp)
 
-target_link_libraries(face ${OpenCV_LIBS} )
+target_link_libraries(noEntryDetector ${OpenCV_LIBS} )
 
 add_executable(Coursework_materials
-        face.cpp)
+        noEntryDetector.cpp)

@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials"
+CMAKE_SOURCE_DIR = /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug"
+CMAKE_BINARY_DIR = /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Coursework_materials.dir/depend.make
@@ -66,30 +66,30 @@ include CMakeFiles/Coursework_materials.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Coursework_materials.dir/flags.make
 
-CMakeFiles/Coursework_materials.dir/face.cpp.o: CMakeFiles/Coursework_materials.dir/flags.make
-CMakeFiles/Coursework_materials.dir/face.cpp.o: ../face.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Coursework_materials.dir/face.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Coursework_materials.dir/face.cpp.o -c "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/face.cpp"
+CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o: CMakeFiles/Coursework_materials.dir/flags.make
+CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o: ../noEntryDetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o -c /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/noEntryDetector.cpp
 
-CMakeFiles/Coursework_materials.dir/face.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Coursework_materials.dir/face.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/face.cpp" > CMakeFiles/Coursework_materials.dir/face.cpp.i
+CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/noEntryDetector.cpp > CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.i
 
-CMakeFiles/Coursework_materials.dir/face.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Coursework_materials.dir/face.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/face.cpp" -o CMakeFiles/Coursework_materials.dir/face.cpp.s
+CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/noEntryDetector.cpp -o CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.s
 
 # Object files for target Coursework_materials
 Coursework_materials_OBJECTS = \
-"CMakeFiles/Coursework_materials.dir/face.cpp.o"
+"CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o"
 
 # External object files for target Coursework_materials
 Coursework_materials_EXTERNAL_OBJECTS =
 
-Coursework_materials: CMakeFiles/Coursework_materials.dir/face.cpp.o
+Coursework_materials: CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o
 Coursework_materials: CMakeFiles/Coursework_materials.dir/build.make
 Coursework_materials: CMakeFiles/Coursework_materials.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Coursework_materials"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Coursework_materials"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Coursework_materials.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -101,6 +101,6 @@ CMakeFiles/Coursework_materials.dir/clean:
 .PHONY : CMakeFiles/Coursework_materials.dir/clean
 
 CMakeFiles/Coursework_materials.dir/depend:
-	cd "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/Coursework_materials.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug /Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/Coursework_materials.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Coursework_materials.dir/depend
 

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/face.cpp" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/Coursework materials/cmake-build-debug/CMakeFiles/Coursework_materials.dir/face.cpp.o"
+  "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/noEntryDetector.cpp" "/Users/lucian.rusu/Documents/UoB_Programs/ImageProcessingCW/NoEntrySignsDetector/cmake-build-debug/CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

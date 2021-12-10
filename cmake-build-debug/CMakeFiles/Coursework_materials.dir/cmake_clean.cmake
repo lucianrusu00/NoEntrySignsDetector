@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Coursework_materials.dir/face.cpp.o"
+  "CMakeFiles/Coursework_materials.dir/noEntryDetector.cpp.o"
   "Coursework_materials"
   "Coursework_materials.pdb"
 )
